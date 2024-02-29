@@ -1,14 +1,19 @@
 {
   "name": "api-exam-part-",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx json-server db.json"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cypress": "^13.6.6"
-  }
+  },
+  "devDependencies": {
+    "json-server": "^1.0.0-alpha.23",
+    "json-server-auth": "^2.1.0"
+  },
+  "keywords": [],
+  "description": ""
 }

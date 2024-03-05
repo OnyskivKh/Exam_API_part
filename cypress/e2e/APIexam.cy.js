@@ -43,7 +43,6 @@ describe('Exam API tests', () => {
                     })
             })
             });
-
     it('Create a post. Verify HTTP response status code', () => {
         const postData = {
             title: 'New Post',
@@ -60,7 +59,6 @@ describe('Exam API tests', () => {
 
         });
     });
-
     it('Create post with access token in header. Verify HTTP response status code and post creation', () => {
         const postData = {
             title: 'New Post',
@@ -120,7 +118,6 @@ describe('Exam API tests', () => {
             expect(response.status).to.be.equal(404);
         });
     });
-
     it('Create post entity and update the created entity. Verify HTTP response status code and verify that the entity is updated', () => {
         cy.log('Create post entity');
         const postData = {
@@ -158,10 +155,13 @@ describe('Exam API tests', () => {
                     expect(getResponse.body.body).to.equal('Updated Post Body');
                 });
             });
-            it('Delete non-existing post entity. Verify HTTP response status code', () => {
-                cy.request({
+        });
+    });
+    it('Delete non-existing post entity. Verify HTTP response status code', () => {
+        const id = [];
+        cy.request({
             method: 'DELETE',
-            url: `/posts/${postId}`,
+            url: `/posts/${id}`,
             failOnStatusCode: false
         }).then(response => {
             expect(response.status).to.equal(404);
@@ -213,8 +213,6 @@ describe('Exam API tests', () => {
                 });
             });
         });
-});
-});
 });
 });
 

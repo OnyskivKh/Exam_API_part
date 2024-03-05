@@ -19,14 +19,29 @@
       "title": "New Post 2",
       "body": "This is a new post created via API 2",
       "id": "ATRuKo8"
+    },
+    {
+      "email": "krystyna120999@gmail.com",
+      "password": "qwerty12345",
+      "id": "o6M7Ir3"
+    },
+    {
+      "title": "title",
+      "body": "body",
+      "id": "rGza-jQ"
     }
   ],
   "users": [
     {
-      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtyeXN0eW5hMTIwOUBnbWFpbC5jb20iLCJpYXQiOjE3MDk2NTAzOTEsImV4cCI6MTcwOTY1Mzk5MSwic3ViIjoiMTEifQ.Ksse1rkldvw2Se6Sl6v41fFSdYJzvxnO0SGbvDaW84M",
+      "email": "vladherchuk0302@gmail.com",
+      "password": "$2a$10$QesgUNwbNEXJmI0SoKj8/uuaOL7E85YrF9NeqltcjgbKMGZyDdeWi",
+      "id": 12
+    },
+    {
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZsYWRoZXJjaHVrMDMwMkBnbWFpbC5jb20iLCJpYXQiOjE3MDk2NTcyMzIsImV4cCI6MTcwOTY2MDgzMiwic3ViIjoiMTIifQ.D1Tc6XNGiQ1AgPw7Bj0wW6bw2gxleOgNT9OMKHATMzY",
       "user": {
-        "email": "krystyna1209@gmail.com",
-        "id": 11
+        "email": "vladherchuk0302@gmail.com",
+        "id": 12
       }
     }
   ]

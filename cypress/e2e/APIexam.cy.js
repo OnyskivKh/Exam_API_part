@@ -44,28 +44,11 @@ describe('Exam API tests', () => {
             })
             });
 
-    // it('Create a post. Verify HTTP response status code', () => {
-    //         const postData = {
-    //             title: 'New Post Title',
-    //             body: 'New Post Body',
-    //             userId: 1
-    //         };
-    //         cy.request({
-    //             method: 'POST',
-    //             url: '/664/posts',
-    //             accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im9saXZpZXJAbWFpbC5jb20iLCJpYXQiOjE3MDk2NDM5MTYsImV4cCI6MTcwOTY0NzUxNiwic3ViIjoiMTIifQ.prXdP852TeAW4c7UI29b7B_RTjJRI4mEgnRkvkuqPDk',
-    //             body: postData,
-    //             failOnStatusCode: false
-    //         }).then((response) => {
-    //             expect(response.status).to.equal(401);
-    //         });
-    //     });
-
     it('Create a post. Verify HTTP response status code', () => {
         const postData = {
             title: 'New Post',
             body: 'This is a new post created via API',
-            userId: user.id
+            userId: id
         };
         cy.request({
             method: 'POST',
@@ -74,29 +57,6 @@ describe('Exam API tests', () => {
             failOnStatusCode: false
         }).then(response => {
             expect(response.status).to.equal(401);
-
-        });
-    });
-
-    it('Create post with access token in header. Verify HTTP response status code and post creation', () => {
-        // Define the post data
-        const postData = {
-            title: 'New Post',
-            body: 'This is a new post created via API',
-            userId: user.id
-        };
-        const accessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im9saXZpZXJAbWFpbC5jb20iLCJpYXQiOjE3MDk2NDM5MTYsImV4cCI6MTcwOTY0NzUxNiwic3ViIjoiMTIifQ.prXdP852TeAW4c7UI29b7B_RTjJRI4mEgnRkvkuqPDk';
-
-        cy.request({
-            method: 'POST',
-            url: '/664/posts',
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            },
-            body: postData
-        }).then((response) => {
-
-            expect(response.status).to.equal(201);
 
         });
     });
@@ -161,7 +121,7 @@ describe('Exam API tests', () => {
         });
     });
 
-    it.only('Create post entity and update the created entity. Verify HTTP response status code and verify that the entity is updated', () => {
+    it('Create post entity and update the created entity. Verify HTTP response status code and verify that the entity is updated', () => {
         cy.log('Create post entity');
         const postData = {
             title: 'New Post',

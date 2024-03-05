@@ -1,13 +1,49 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "title": "New Post",
+      "body": "This is a new post created via API",
+      "id": "lUVgi8_"
+    },
+    {
+      "title": "New Post 2",
+      "body": "This is a new post created via API 2",
+      "id": "ATRuKo8"
+    },
+    {
+      "email": "krystyna120999@gmail.com",
+      "password": "qwerty12345",
+      "id": "o6M7Ir3"
+    },
+    {
+      "title": "title",
+      "body": "body",
+      "id": "rGza-jQ"
+    }
   ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "users": [
+    {
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InZsYWRoZXJjaHVrMDMwMkBnbWFpbC5jb20iLCJpYXQiOjE3MDk2NTcyMzIsImV4cCI6MTcwOTY2MDgzMiwic3ViIjoiMTIifQ.D1Tc6XNGiQ1AgPw7Bj0wW6bw2gxleOgNT9OMKHATMzY",
+      "user": {
+        "email": "vladherchuk0302@gmail.com",
+        "id": 12
+      }
+    },
+    {
+      "email": "vladherchuk0302@gmail.com",
+      "password": "$2a$10$QesgUNwbNEXJmI0SoKj8/uuaOL7E85YrF9NeqltcjgbKMGZyDdeWi",
+      "id": 12
+    }
+
+  ]
 }

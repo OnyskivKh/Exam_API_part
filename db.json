@@ -1,13 +1,33 @@
 {
   "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
+    {
+      "id": "1",
+      "title": "a title",
+      "views": 100
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "title": "New Post",
+      "body": "This is a new post created via API",
+      "id": "lUVgi8_"
+    },
+    {
+      "title": "New Post 2",
+      "body": "This is a new post created via API 2",
+      "id": "ATRuKo8"
+    }
   ],
-  "comments": [
-    { "id": "1", "text": "a comment about post 1", "postId": "1" },
-    { "id": "2", "text": "another comment about post 1", "postId": "1" }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  "users": [
+    {
+      "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtyeXN0eW5hMTIwOUBnbWFpbC5jb20iLCJpYXQiOjE3MDk2NTAzOTEsImV4cCI6MTcwOTY1Mzk5MSwic3ViIjoiMTEifQ.Ksse1rkldvw2Se6Sl6v41fFSdYJzvxnO0SGbvDaW84M",
+      "user": {
+        "email": "krystyna1209@gmail.com",
+        "id": 11
+      }
+    }
+  ]
 }

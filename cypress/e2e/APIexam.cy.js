@@ -1,7 +1,11 @@
 import post from '../../db.json'
+import user from '../../db.json'
 import {faker} from "@faker-js/faker";
 
 post.id = faker.number.int({ min: 10, max: 100 });
+user.id = faker.number.int({ min: 10, max: 100 });
+user.email = faker.internet.email();
+user.password = faker.internet.password();
 
 describe('Exam API tests', () => {
     let postId;
@@ -46,8 +50,7 @@ describe('Exam API tests', () => {
     it('Create a post. Verify HTTP response status code', () => {
         const postData = {
             title: 'New Post',
-            body: 'This is a new post created via API',
-            userId: id
+            body: 'This is a new post created via API'
         };
         cy.request({
             method: 'POST',
@@ -60,25 +63,36 @@ describe('Exam API tests', () => {
         });
     });
     it('Create post with access token in header. Verify HTTP response status code and post creation', () => {
-        const postData = {
-            title: 'New Post',
-            body: 'Post body',
-            userId: 1
-        };
-        const accessToken = 'your_access_token';
+        cy.log('Register user');
+        let accessToken;
         cy.request({
             method: 'POST',
-            url: '/664/posts',
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            },
-            body: postData
-        }).then((response) => {
-            expect(response.status).to.equal(201);
-            expect(response.body.title).to.equal(postData.title);
-            expect(response.body.body).to.equal(postData.body);
-            expect(response.body.userId).to.equal(postData.userId);
-            expect(response.body).to.have.property('id');
+            url: '/register',
+            body: {
+                email: user.email,
+                password: user.password
+            }
+        }).then((responseUser) => {
+            expect(responseUser.status).to.equal(201);
+            accessToken = responseUser.body.accessToken;
+
+            cy.log('Create post with token');
+            const postData = {
+                title: 'New Post',
+                body: 'Post body'
+            };
+            cy.request({
+                method: 'POST',
+                url: '/664/posts',
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                },
+                body: postData
+            }).then((response) => {
+                expect(response.status).to.equal(201);
+                expect(response.body.title).to.equal(postData.title);
+                expect(response.body.body).to.equal(postData.body);
+            });
         });
     });
     it('Create post entity and verify that the entity is created', () => {
@@ -198,14 +212,14 @@ describe('Exam API tests', () => {
                 cy.log('Delete the post');
                 cy.request({
                     method: 'DELETE',
-                    url: `/posts/:${postId}`
+                    url: `/posts/${postId}`
                 }).then(deleteResponse => {
                     expect(deleteResponse.status).to.equal(200);
 
                     cy.log('Verify that the entity is deleted');
                     cy.request({
                         method: 'GET',
-                        url: `/posts/:${postId}`,
+                        url: `/posts/${postId}`,
                         failOnStatusCode: false
                     }).then(getResponse => {
                         expect(getResponse.status).to.equal(404);
@@ -214,7 +228,8 @@ describe('Exam API tests', () => {
             });
         });
 });
-});
+    });
+
 
 
 

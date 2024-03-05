@@ -11,7 +11,7 @@
   },
   "keywords": [],
   "scripts": {
-     "server" : "npm run server"
+     "server" : "npx json-server-auth http://jsonplaceholder.typicode.com/db"
   },
   "description": "",
   "devDependencies": {

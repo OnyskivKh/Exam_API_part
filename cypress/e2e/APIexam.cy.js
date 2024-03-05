@@ -59,7 +59,6 @@ describe('Exam API tests', () => {
             failOnStatusCode: false
         }).then(response => {
             expect(response.status).to.equal(401);
-
         });
     });
     it('Create post with access token in header. Verify HTTP response status code and post creation', () => {
@@ -98,8 +97,7 @@ describe('Exam API tests', () => {
     it('Create post entity and verify that the entity is created', () => {
         const postData = {
             title: 'New Post',
-            body: 'New post created via API',
-            userId: 1
+            body: 'New post created via API'
         };
         cy.request({
             method: 'POST',
@@ -120,8 +118,7 @@ describe('Exam API tests', () => {
         const id = [];
         const updatedPostData = {
             title: 'Updated title',
-            body: 'Updated body',
-            userId: 1
+            body: 'Updated body'
         };
         cy.request({
             method: 'PUT',
@@ -136,8 +133,7 @@ describe('Exam API tests', () => {
         cy.log('Create post entity');
         const postData = {
             title: 'New Post',
-            body: 'New Post Body',
-            userId: 1
+            body: 'New Post Body'
         };
         cy.request({
             method: 'POST',
@@ -182,11 +178,10 @@ describe('Exam API tests', () => {
         });
     });
     it('Create post entity, update the created entity, and delete the entity. Verify HTTP response status code and verify that the entity is deleted', () => {
-        cy.log('Created post entity');
+        cy.log('Create post entity');
         const postData = {
             title: 'New Post',
-            body: 'New Post Body',
-            userId: 1
+            body: 'New Post Body'
         };
         cy.request({
             method: 'POST',
